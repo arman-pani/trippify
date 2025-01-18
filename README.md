@@ -4,6 +4,11 @@
 __Trippify__ is an AI-powered trip planning application designed to make travel planning seamless and personalized. Built with __Flutter__ and __AWS Amplify__, Trippify offers a range of features to help users create, manage, and share their travel plans with a global community.
 
 
+![Home Page](https://github.com/arman-pani/trippify/tree/main/assets/screenshots/ss2.jpg)
+![Trip Plan Page](https://github.com/arman-pani/trippify/tree/main/assets/screenshots/ss1.jpg)
+
+
+
 
 ## Features ✨
 
