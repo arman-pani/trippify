@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:trippify/constants/textstyle_constants.dart';
 
 class CustomCalendar extends StatefulWidget {
   const CustomCalendar({super.key});
@@ -26,6 +28,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
           rangeEndDay: _rangeEnd,
           rangeSelectionMode: _rangeSelectionMode,
           calendarStyle: CalendarStyle(
+            isTodayHighlighted: false,
             selectedDecoration: BoxDecoration(
               color: Colors.blue.shade700,
               shape: BoxShape.circle,
@@ -57,43 +60,48 @@ class _CustomCalendarState extends State<CustomCalendar> {
           },
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            timeContainer(),
+            timeContainer("From", _rangeStart),
+            SizedBox(width: 15),
+            timeContainer("To", _rangeEnd),
           ],
         )
       ],
     );
   }
 
-  Container timeContainer(String title, DateTime date) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: 12.0,
-        horizontal: 16.0,
-      ),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey[300]!),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'From',
-            style: TextStyle(
-              color: Colors.grey,
-              fontSize: 12.0,
+  Widget timeContainer(String title, DateTime? date) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          vertical: 12.0,
+          horizontal: 16.0,
+        ),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey[300]!),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextstyleConstants.smallTextStyle1,
             ),
-          ),
-          Text(
-            formatDate(_rangeStart),
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16.0,
+            Text(
+              date != null ? formatDate(date) : 'Select',
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16.0,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
+
+  String formatDate(DateTime? date) =>
+      date != null ? DateFormat('EEE, d MMM').format(date) : 'Select';
 }

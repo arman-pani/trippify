@@ -22,12 +22,40 @@ class TextstyleConstants {
 
   static TextStyle buttonTextStyle = GoogleFonts.inter(
     fontSize: 16,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.bold,
     color: Colors.white,
   );
 
   static TextStyle titleTextStyle = GoogleFonts.inter(
     fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static TextStyle smallTextStyle1 = GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.normal,
+    color: Colors.grey,
+  );
+  static TextStyle smallTextStyle2 = GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.normal,
+    color: Colors.black,
+  );
+
+  static TextStyle mediumTextStyle1 = GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+  static TextStyle mediumTextStyle2 = GoogleFonts.inter(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
+
+  static TextStyle titleTextStyle1 = GoogleFonts.poppins(
+    fontSize: 34,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );

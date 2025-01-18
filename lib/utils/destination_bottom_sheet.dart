@@ -10,40 +10,47 @@ void showDestinationModal(
 ) {
   showModalBottomSheet(
     context: context,
+    backgroundColor: Colors.white,
+    isScrollControlled: true,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
     builder: (BuildContext context) {
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            margin: const EdgeInsets.only(top: 8),
-            width: 40,
-            height: 4,
-            decoration: BoxDecoration(
-              color: Colors.grey[400],
-              borderRadius: BorderRadius.circular(2),
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          spacing: 15,
+          children: [
+            Row(
+              children: [
+                IconButton.filled(
+                  onPressed: () => Navigator.pop(context),
+                  icon: Icon(Icons.close),
+                  style: IconButton.styleFrom(
+                    backgroundColor: Colors.grey.shade200,
+                  ),
+                  color: Colors.black,
+                ),
+                Spacer(flex: 1),
+                Text(
+                  'Travel Destination',
+                  style: TextstyleConstants.titleTextStyle,
+                ),
+                Spacer(flex: 2),
+              ],
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'Travel Destination',
-              style: TextstyleConstants.titleTextStyle,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: CustomTextfield(
+                prefixIcon: Symbols.search_rounded,
+                hintText: 'Where to?',
+                labelText: '',
+                controller: destinationController,
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: CustomTextfield(
-              prefixIcon: Symbols.search_rounded,
-              hintText: 'Where to?',
-              labelText: '',
-              controller: destinationController,
-            ),
-          ),
-          Expanded(
-            child: ListView(
+            ListView(
+              shrinkWrap: true,
               children: const [
                 DestinationTile(
                   name: 'Bandung',
@@ -72,17 +79,17 @@ void showDestinationModal(
                 ),
               ],
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: CustomGradientButton(
-              label: 'Confirm',
-              onPressed: () {
-                Navigator.pop(context);
-              },
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: CustomGradientButton(
+                label: 'Confirm',
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       );
     },
   );

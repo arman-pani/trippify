@@ -12,16 +12,28 @@ class CustomGradientButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.black,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-        minimumSize: const Size(double.infinity, 50),
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.blue, Colors.purple],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ),
+        borderRadius: BorderRadius.circular(25),
       ),
-      child: Text(
-        label,
-        style: TextstyleConstants.buttonTextStyle,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          elevation: 5,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          minimumSize: const Size(double.infinity, 50),
+        ),
+        child: Text(
+          label,
+          style: TextstyleConstants.buttonTextStyle,
+        ),
       ),
     );
   }

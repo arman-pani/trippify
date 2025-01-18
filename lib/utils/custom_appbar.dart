@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:trippify/constants/textstyle_constants.dart';
 
-AppBar commonAppBar(String title) {
+AppBar commonAppBar({required String title, PreferredSizeWidget? bottom}) {
   return AppBar(
     leading: IconButton(
       onPressed: () {},
@@ -16,5 +16,6 @@ AppBar commonAppBar(String title) {
       title,
       style: TextstyleConstants.appBarTitle,
     ),
+    bottom: bottom,
   );
 }

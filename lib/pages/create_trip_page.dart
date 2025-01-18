@@ -74,7 +74,7 @@ class _CreateTripPageState extends State<CreateTripPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: commonAppBar('Create Trip'),
+      appBar: commonAppBar(title: 'Create Trip'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
