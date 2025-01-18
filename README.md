@@ -70,13 +70,11 @@ __Trippify__ is an AI-powered trip planning application designed to make travel 
 ```bash
 flutter pub get
 ```
-3. Configure AWS Amplify:
+3. Configure AWS Amplify: Ensure that authentication, storage, and API modules are configured in the backend.
 ```bash
 amplify init  
 amplify push
 ```
-Ensure that authentication, storage, and API modules are configured in the backend.
-
 4. Add API keys for Google Gemini, Flight API, and IRCTC API to a secure configuration file.
 
 5. Run the app:
