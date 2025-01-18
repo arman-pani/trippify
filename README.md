@@ -44,7 +44,7 @@ __Trippify__ is an AI-powered trip planning application designed to make travel 
 - **Hive** is used as the local database to cache user data and trips for offline access and improved performance.
 
 ### 5. Real-Time Travel Information
-- **Flight API:** Provides real-time flight schedules and updates.
+- **Skyscanner API:** Provides real-time flight schedules and updates.
 
 - **IRCTC API:** Fetches live train information for planning travel by rail.
 
