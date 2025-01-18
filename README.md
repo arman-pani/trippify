@@ -28,30 +28,28 @@ __Trippify__ is an AI-powered trip planning application designed to make travel 
 
 ## Features Breakdown
 ### 1. Authentication
-**Email and Password Authentication:**
-Implemented using AWS Amplify Auth for secure user sign-up and login.
+- **Email and Password Authentication:** Implemented using AWS Amplify Auth for secure user sign-up and login.
 
-**Google Sign-In:**
-Integrated with AWS Amplify to allow users to sign in using their Google accounts.
+- **Google Sign-In:** Integrated with AWS Amplify to allow users to sign in using their Google accounts.
 
 ### 2. User Information Storage
-User information, including profile details, is securely stored in AWS Amplify's database.
+- User information, including profile details, is securely stored in AWS Amplify's database.
 
 ### 3. Trip Management
-User-created trips are stored in Amplify Storage, ensuring accessibility and synchronization across devices.
+- User-created trips are stored in Amplify Storage, ensuring accessibility and synchronization across devices.
 
-Trips can be manually created or generated via **Google Gemini API** for AI-driven suggestions.
+- Trips can be manually created or generated via **Google Gemini API** for AI-driven suggestions.
 
 ### 4. Local Data Persistence
-**Hive** is used as the local database to cache user data and trips for offline access and improved performance.
+- **Hive** is used as the local database to cache user data and trips for offline access and improved performance.
 
 ### 5. Real-Time Travel Information
-**Flight API:** Provides real-time flight schedules and updates.
+- **Flight API:** Provides real-time flight schedules and updates.
 
-**IRCTC API:** Fetches live train information for planning travel by rail.
+- **IRCTC API:** Fetches live train information for planning travel by rail.
 
 ### 6. State Management
-**Bloc** is used to manage state efficiently across the application, ensuring a smooth and responsive user experience.
+- **Bloc** is used to manage state efficiently across the application, ensuring a smooth and responsive user experience.
 
 
 ## How to Run the Project 🚀
