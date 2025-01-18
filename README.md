@@ -63,8 +63,8 @@ __Trippify__ is an AI-powered trip planning application designed to make travel 
 **Steps to Set Up**
 1. Clone the repository:
 ```bash
-    git clone https://github.com/arman-pani/trippify.git
-    cd trippify 
+git clone https://github.com/arman-pani/trippify.git
+cd trippify 
 ```
 2. Install dependencies:
 ```bash
