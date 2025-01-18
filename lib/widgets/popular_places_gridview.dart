@@ -1,22 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:trippify/constants/dummy_data.dart';
 import 'package:trippify/constants/textstyle_constants.dart';
+import 'package:trippify/models/place_model.dart';
 
 class PopularPlacesWidget extends StatelessWidget {
-  final List<Map<String, String>> places = [
-    {'name': 'Bali', 'destinations': '20+ destinations'},
-    {'name': 'Yogyakarta', 'destinations': '20+ destinations'},
-    {'name': 'Banjarbaru', 'destinations': '30+ destinations'},
-    {'name': 'Surabaya', 'destinations': '20+ destinations'},
-    {'name': 'Sukabumi', 'destinations': '20+ destinations'},
-    {'name': 'Padang', 'destinations': '30+ destinations'},
-    {'name': 'Bali', 'destinations': '20+ destinations'},
-    {'name': 'Yogyakarta', 'destinations': '20+ destinations'},
-    {'name': 'Banjarbaru', 'destinations': '30+ destinations'},
-    {'name': 'Surabaya', 'destinations': '20+ destinations'},
-    {'name': 'Sukabumi', 'destinations': '20+ destinations'},
-    {'name': 'Padang', 'destinations': '30+ destinations'},
-  ];
-
   PopularPlacesWidget({super.key});
 
   @override
@@ -27,12 +14,14 @@ class PopularPlacesWidget extends StatelessWidget {
         clipBehavior: Clip.none,
         scrollDirection: Axis.horizontal,
         controller: PageController(viewportFraction: 1.0),
-        itemCount: (places.length / 6).ceil(),
+        itemCount: (dummyPopularPlaces.length / 6).ceil(),
         itemBuilder: (context, pageIndex) {
           final startIndex = pageIndex * 6;
-          final items = places.sublist(
+          final items = dummyPopularPlaces.sublist(
             startIndex,
-            (startIndex + 6 > places.length) ? places.length : startIndex + 6,
+            (startIndex + 6 > dummyPopularPlaces.length)
+                ? dummyPopularPlaces.length
+                : startIndex + 6,
           );
 
           return GridView.builder(
@@ -48,10 +37,8 @@ class PopularPlacesWidget extends StatelessWidget {
             padding: EdgeInsets.all(0),
             itemCount: items.length,
             itemBuilder: (context, index) {
-              return PlaceCard(
-                name: items[index]['name']!,
-                destinations: items[index]['destinations']!,
-              );
+              final place = dummyPopularPlaces[index];
+              return PlaceCard(place: place);
             },
           );
         },
@@ -61,13 +48,11 @@ class PopularPlacesWidget extends StatelessWidget {
 }
 
 class PlaceCard extends StatelessWidget {
-  final String name;
-  final String destinations;
+  final PlaceModel place;
 
   const PlaceCard({
     super.key,
-    required this.name,
-    required this.destinations,
+    required this.place,
   });
 
   @override
@@ -77,6 +62,7 @@ class PlaceCard extends StatelessWidget {
         CircleAvatar(
           radius: 25,
           backgroundColor: Colors.white,
+          backgroundImage: AssetImage(place.imagePath),
         ),
         SizedBox(width: 10),
         Column(
@@ -84,11 +70,11 @@ class PlaceCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              name,
+              place.name,
               style: TextstyleConstants.mediumTextStyle1,
             ),
             Text(
-              destinations,
+              "${place.numberOfDestinations}+ destinations",
               style: TextstyleConstants.smallTextStyle1,
             )
           ],

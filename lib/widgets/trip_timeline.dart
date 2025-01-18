@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:timelines_plus/timelines_plus.dart';
+import 'package:trippify/constants/colors_constants.dart';
 import 'package:trippify/constants/textstyle_constants.dart';
 import 'package:trippify/helpers/common_methods.dart';
 import 'package:trippify/models/daywise_plan_model.dart';
@@ -33,12 +34,15 @@ class TripTimeline extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   decoration: BoxDecoration(
                     border: Border.fromBorderSide(
-                        BorderSide(color: Colors.grey, width: 1)),
-                    borderRadius: BorderRadius.circular(20),
+                      BorderSide(color: Colors.black, width: 1),
+                    ),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   child: Text(
-                      "${formatTimeOfDay(poi.startTime)} - ${formatTimeOfDay(poi.endTime)}",
-                      softWrap: false),
+                    "${formatTimeOfDay(poi.startTime)} - ${formatTimeOfDay(poi.endTime)}",
+                    style: TextstyleConstants.mediumTextStyle2,
+                    softWrap: false,
+                  ),
                 ),
                 SizedBox(height: 15),
                 poiDetailCard(
@@ -58,12 +62,12 @@ class TripTimeline extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(left: 20, bottom: 30, top: 15, right: 20),
       decoration: BoxDecoration(
-        color: Colors.blue[50],
+        color: ColorsConstants.lightBlueColor,
         boxShadow: [
           BoxShadow(
-            color: Colors.blue.shade100,
+            color: ColorsConstants.lightBlueColor,
             spreadRadius: 0.1,
-            blurRadius: 4,
+            blurRadius: 2,
             offset: const Offset(0, 0),
           )
         ],
@@ -78,23 +82,25 @@ class TripTimeline extends StatelessWidget {
             style: TextstyleConstants.titleTextStyle,
           ),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(
-                Symbols.timer_rounded,
-                size: 20,
+                Symbols.schedule_rounded,
+                size: 18,
+                weight: 600,
                 color: Colors.grey,
               ),
-              SizedBox(width: 5),
+              SizedBox(width: 2),
               Text(
                 "$totalTimeToCover hour in location",
-                style: TextstyleConstants.smallTextStyle1,
+                style: TextstyleConstants.smallTextStyle3,
               ),
             ],
           ),
           RichText(
             text: TextSpan(
               text: "Start from ",
-              style: TextstyleConstants.smallTextStyle1,
+              style: TextstyleConstants.smallTextStyle3,
               children: [
                 TextSpan(
                   text: "\$$costPerPerson (Foreigner)",

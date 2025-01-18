@@ -16,7 +16,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final maxHeight = MediaQuery.of(context).size.height;
-    final maxWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
@@ -68,10 +67,10 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               spacing: 25,
               children: [
-                tripDetailsContainer('Hotel', Symbols.hotel_rounded),
-                tripDetailsContainer('Flight', Symbols.flight_rounded),
+                tripDetailsContainer('Hotel', Symbols.apartment_rounded),
+                tripDetailsContainer('Flight', Symbols.travel_rounded),
                 tripDetailsContainer('Train', Symbols.train_rounded),
-                tripDetailsContainer('Experience', Symbols.umbrella_rounded),
+                tripDetailsContainer('Experience', Symbols.festival_rounded),
               ],
             ),
             SizedBox(height: 20),
@@ -120,12 +119,14 @@ class _HomePageState extends State<HomePage> {
             icon,
             color: Colors.black,
             size: 24,
+            fill: 1,
           ),
         ),
         SizedBox(height: 5),
         Text(
           title,
-          style: TextstyleConstants.smallTextStyle2,
+          style: TextstyleConstants.smallTextStyle2
+              .copyWith(fontWeight: FontWeight.w600),
         )
       ],
     );

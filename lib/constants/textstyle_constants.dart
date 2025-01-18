@@ -21,8 +21,9 @@ class TextstyleConstants {
   );
 
   static TextStyle buttonTextStyle = GoogleFonts.inter(
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: FontWeight.bold,
+    letterSpacing: 1.1,
     color: Colors.white,
   );
 
@@ -35,6 +36,12 @@ class TextstyleConstants {
   static TextStyle smallTextStyle1 = GoogleFonts.inter(
     fontSize: 12,
     fontWeight: FontWeight.normal,
+    color: Colors.grey,
+  );
+
+  static TextStyle smallTextStyle3 = GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
     color: Colors.grey,
   );
   static TextStyle smallTextStyle2 = GoogleFonts.inter(

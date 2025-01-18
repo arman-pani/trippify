@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trippify/models/daywise_plan_model.dart';
+import 'package:trippify/models/place_model.dart';
 import 'package:trippify/models/recommended_trip_model.dart';
 
 List<RecommendedTripModel> dummyRecommendedTrips = [
@@ -121,5 +122,68 @@ List<DaywisePlanModel> dummyDaywisePlanList = [
         endTime: TimeOfDay(hour: 12, minute: 00),
       ),
     ],
+  ),
+];
+
+final List<PlaceModel> dummyPopularPlaces = [
+  PlaceModel(
+    name: 'Bali',
+    imagePath: 'assets/images/bali.png',
+    numberOfDestinations: 20,
+  ),
+  PlaceModel(
+    name: 'Yogyakarta',
+    imagePath: 'assets/images/yogyakarta.png',
+    numberOfDestinations: 20,
+  ),
+  PlaceModel(
+    name: 'Banjarbaru',
+    imagePath: 'assets/images/banjarbaru.png',
+    numberOfDestinations: 30,
+  ),
+  PlaceModel(
+    name: 'Surabaya',
+    imagePath: 'assets/images/surabaya.png',
+    numberOfDestinations: 20,
+  ),
+  PlaceModel(
+    name: 'Sukabumi',
+    imagePath: 'assets/images/sukabumi.png',
+    numberOfDestinations: 20,
+  ),
+  PlaceModel(
+    name: 'Padang',
+    imagePath: 'assets/images/padang.png',
+    numberOfDestinations: 30,
+  ),
+  PlaceModel(
+    name: 'Bali',
+    imagePath: 'assets/images/bali.png',
+    numberOfDestinations: 20,
+  ),
+  PlaceModel(
+    name: 'Yogyakarta',
+    imagePath: 'assets/images/yogyakarta.png',
+    numberOfDestinations: 20,
+  ),
+  PlaceModel(
+    name: 'Banjarbaru',
+    imagePath: 'assets/images/banjarbaru.png',
+    numberOfDestinations: 30,
+  ),
+  PlaceModel(
+    name: 'Surabaya',
+    imagePath: 'assets/images/surabaya.png',
+    numberOfDestinations: 20,
+  ),
+  PlaceModel(
+    name: 'Sukabumi',
+    imagePath: 'assets/images/sukabumi.png',
+    numberOfDestinations: 20,
+  ),
+  PlaceModel(
+    name: 'Padang',
+    imagePath: 'assets/images/padang.png',
+    numberOfDestinations: 30,
   ),
 ];

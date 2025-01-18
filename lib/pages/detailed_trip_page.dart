@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trippify/constants/colors_constants.dart';
 import 'package:trippify/constants/dummy_data.dart';
 import 'package:trippify/constants/textstyle_constants.dart';
 import 'package:trippify/helpers/common_methods.dart';
@@ -32,9 +33,9 @@ class _DetailedTripPageState extends State<DetailedTripPage> {
         appBar: commonAppBar(
           title: 'Trip Plan Details',
           bottom: TabBar(
-            labelColor: Colors.blue,
+            labelColor: ColorsConstants.blueColor,
             unselectedLabelColor: Colors.grey,
-            indicatorColor: Colors.blue,
+            indicatorColor: ColorsConstants.blueColor,
             indicatorSize: TabBarIndicatorSize.tab,
             indicatorWeight: 2,
             tabs: List.generate(dummyDaywisePlanList.length, (dayIndex) {
@@ -78,7 +79,7 @@ class DayWisePlanScreen extends StatelessWidget {
             ),
             Text(
               '6 Days Trip',
-              style: TextstyleConstants.smallTextStyle1,
+              style: TextstyleConstants.smallTextStyle3,
             ),
             RichText(
               text: TextSpan(
@@ -87,7 +88,7 @@ class DayWisePlanScreen extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: "| ${formatDate(daywisePlanModel.planDateTime)}",
-                    style: TextstyleConstants.smallTextStyle1,
+                    style: TextstyleConstants.smallTextStyle3,
                   )
                 ],
               ),

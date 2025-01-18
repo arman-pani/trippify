@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trippify/constants/colors_constants.dart';
 import 'package:trippify/constants/textstyle_constants.dart';
 
 class CustomGradientButton extends StatelessWidget {
@@ -15,7 +16,10 @@ class CustomGradientButton extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.blue, Colors.purple],
+          colors: [
+            ColorsConstants.blueColor,
+            ColorsConstants.purpleColor,
+          ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
@@ -25,6 +29,7 @@ class CustomGradientButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
           elevation: 5,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
