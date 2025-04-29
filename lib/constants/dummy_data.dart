@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:trippify/models/daywise_plan_model.dart';
 import 'package:trippify/models/place_model.dart';
+import 'package:trippify/models/place_predictition_model.dart';
 import 'package:trippify/models/recommended_trip_model.dart';
+import 'package:trippify/models/user_generated_trip_model.dart';
 
 List<RecommendedTripModel> dummyRecommendedTrips = [
   RecommendedTripModel(
@@ -185,5 +187,128 @@ final List<PlaceModel> dummyPopularPlaces = [
     name: 'Padang',
     imagePath: 'assets/images/padang.png',
     numberOfDestinations: 30,
+  ),
+];
+final recommmendedSuggestions = [
+  PlacePredictionModel(
+    placeId: '1',
+    text: 'Bali, Indonesia',
+    mainText: 'Bali, Indonesia',
+    secondaryText: 'Bali',
+    type: 'locality',
+  ),
+  PlacePredictionModel(
+    placeId: '2',
+    text: 'Yogyakarta, Indonesia',
+    mainText: 'Yogyakarta, Indonesia',
+    secondaryText: 'Yogyakarta',
+    type: 'locality',
+  ),
+  PlacePredictionModel(
+    placeId: '3',
+    text: 'Banjarbaru, Indonesia',
+    mainText: 'Banjarbaru, Indonesia',
+    secondaryText: 'Banjarbaru',
+    type: 'locality',
+  ),
+  PlacePredictionModel(
+    placeId: '4',
+    text: 'Surabaya, Indonesia',
+    mainText: 'Surabaya, Indonesia',
+    secondaryText: 'Surabaya',
+    type: 'locality',
+  ),
+];
+
+final dummySavedTrips = [
+  UserGeneratedTripModel(
+    id: "1",
+    name: "Beach Getaway",
+    description: "A relaxing trip to the sunny beaches.",
+    imagePath: "assets/images/beach_getaway.jpg",
+    costPerPerson: "200",
+    startDate: "2025-03-15",
+    endDate: "2025-03-20",
+    destination: "Maldives",
+    budget: 1000,
+    peopleCount: 2,
+    itinerary: dummyDaywisePlanList,
+    outboundFlightTicket: FlightTicketModel(
+      flightNumber: "FL123",
+      departureDateTime: DateTime(2025, 3, 15, 9, 0),
+      arrivalDateTime: DateTime(2025, 3, 15, 13, 0),
+      airline: "Air Maldives",
+      price: 300,
+      direction: 'outbound',
+    ),
+    outboundTrainTicket: TrainTicketModel(
+      trainNumber: "TR567",
+      departureDateTime: DateTime(2025, 4, 10, 7, 0),
+      arrivalDateTime: DateTime(2025, 4, 10, 19, 0),
+      trainName: "Mountain Express",
+      price: 200,
+      direction: 'outbound',
+    ),
+    returnFlightTicket: FlightTicketModel(
+      flightNumber: "FL124",
+      departureDateTime: DateTime(2025, 3, 20, 15, 0),
+      arrivalDateTime: DateTime(2025, 3, 20, 19, 0),
+      airline: "Air Maldives",
+      price: 300,
+      direction: 'return',
+    ),
+    returnTrainTicket: TrainTicketModel(
+      trainNumber: "TR568",
+      departureDateTime: DateTime(2025, 4, 15, 9, 0),
+      arrivalDateTime: DateTime(2025, 4, 15, 21, 0),
+      trainName: "Mountain Express",
+      price: 200,
+      direction: 'return',
+    ),
+  ),
+  UserGeneratedTripModel(
+    id: "2",
+    name: "Mountain Adventure",
+    description: "An adventurous trip to the mountains.",
+    imagePath: "assets/images/mountain_adventure.jpg",
+    costPerPerson: "300",
+    startDate: "2025-04-10",
+    endDate: "2025-04-15",
+    destination: "Himalayas",
+    budget: 1500,
+    peopleCount: 4,
+    itinerary: dummyDaywisePlanList,
+    outboundFlightTicket: FlightTicketModel(
+      flightNumber: "FL123",
+      departureDateTime: DateTime(2025, 3, 15, 9, 0),
+      arrivalDateTime: DateTime(2025, 3, 15, 13, 0),
+      airline: "Air Maldives",
+      price: 300,
+      direction: 'outbound',
+    ),
+    outboundTrainTicket: TrainTicketModel(
+      trainNumber: "TR567",
+      departureDateTime: DateTime(2025, 4, 10, 7, 0),
+      arrivalDateTime: DateTime(2025, 4, 10, 19, 0),
+      trainName: "Mountain Express",
+      price: 200,
+      direction: 'outbound',
+    ),
+    returnFlightTicket: FlightTicketModel(
+      flightNumber: "FL124",
+      departureDateTime: DateTime(2025, 3, 20, 15, 0),
+      arrivalDateTime: DateTime(2025, 3, 20, 19, 0),
+      airline: "Air Maldives",
+      price: 300,
+      direction: 'return',
+    ),
+    returnTrainTicket: TrainTicketModel(
+      trainNumber: "TR568",
+      departureDateTime: DateTime(2025, 4, 15, 9, 0),
+      arrivalDateTime: DateTime(2025, 4, 15, 21, 0),
+      trainName: "Mountain Express",
+      price: 200,
+      direction: 'return',
+    ),
   ),
 ];

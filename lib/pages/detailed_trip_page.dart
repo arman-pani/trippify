@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:trippify/constants/colors_constants.dart';
-import 'package:trippify/constants/dummy_data.dart';
 import 'package:trippify/constants/textstyle_constants.dart';
 import 'package:trippify/helpers/common_methods.dart';
 import 'package:trippify/models/daywise_plan_model.dart';
+import 'package:trippify/models/user_generated_trip_model.dart';
 import 'package:trippify/utils/custom_appbar.dart';
 import 'package:trippify/widgets/custom_gradient_button.dart';
 import 'package:trippify/widgets/trip_timeline.dart';
 
 class DetailedTripPage extends StatefulWidget {
-  const DetailedTripPage({super.key});
+  final UserGeneratedTripModel tripModel;
+  const DetailedTripPage({super.key, required this.tripModel});
 
   @override
   State<DetailedTripPage> createState() => _DetailedTripPageState();
@@ -19,7 +20,7 @@ class _DetailedTripPageState extends State<DetailedTripPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: dummyDaywisePlanList.length,
+      length: widget.tripModel.itinerary.length,
       child: Scaffold(
         bottomSheet: Container(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -32,20 +33,22 @@ class _DetailedTripPageState extends State<DetailedTripPage> {
         ),
         appBar: commonAppBar(
           title: 'Trip Plan Details',
+          context: context,
           bottom: TabBar(
             labelColor: ColorsConstants.blueColor,
             unselectedLabelColor: Colors.grey,
             indicatorColor: ColorsConstants.blueColor,
             indicatorSize: TabBarIndicatorSize.tab,
             indicatorWeight: 2,
-            tabs: List.generate(dummyDaywisePlanList.length, (dayIndex) {
-              return Tab(text: 'Day ${dayIndex + 1}');
+            tabs: List.generate(widget.tripModel.itinerary.length, (dayIndex) {
+              return Tab(text: '${dayIndex + 1}');
             }),
           ),
         ),
         body: TabBarView(
-          children: List.generate(dummyDaywisePlanList.length, (dayIndex) {
-            final daywisePlan = dummyDaywisePlanList[dayIndex];
+          children:
+              List.generate(widget.tripModel.itinerary.length, (dayIndex) {
+            final daywisePlan = widget.tripModel.itinerary[dayIndex];
             return DayWisePlanScreen(
               daywisePlanModel: daywisePlan,
               dayIndex: dayIndex,

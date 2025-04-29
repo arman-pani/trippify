@@ -1,25 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:trippify/constants/textstyle_constants.dart';
 
 class CustomTextfield extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final String labelText;
+  final TextInputType? keyboardType;
   final VoidCallback? onTap;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
   final Widget? suffixWidget;
   final bool readOnly;
+  final List<TextInputFormatter>? inputFormatters;
   const CustomTextfield({
     super.key,
     required this.hintText,
     required this.labelText,
+    this.keyboardType = TextInputType.text,
     this.suffixIcon,
     this.readOnly = false,
     this.onTap,
     required this.controller,
     this.suffixWidget,
     this.prefixIcon,
+    this.inputFormatters,
   });
 
   @override
@@ -34,7 +39,9 @@ class CustomTextfield extends StatelessWidget {
     return TextField(
       onTap: onTap,
       controller: controller,
+      keyboardType: keyboardType,
       readOnly: readOnly,
+      inputFormatters: inputFormatters,
       decoration: InputDecoration(
         constraints: BoxConstraints(
           maxHeight: 50,
@@ -76,6 +83,22 @@ class CustomTextfield extends StatelessWidget {
         floatingLabelBehavior: FloatingLabelBehavior.always,
         labelStyle: TextstyleConstants.labelTextStyle,
       ),
+    );
+  }
+}
+
+class DollarInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    // Ensure the dollar sign is always at the start
+    String newText = newValue.text;
+    if (!newText.startsWith('\$')) {
+      newText = '\$${newText.replaceAll('\$', '')}';
+    }
+    return TextEditingValue(
+      text: newText,
+      selection: TextSelection.collapsed(offset: newText.length),
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
+import 'package:trippify/constants/colors_constants.dart';
 import 'package:trippify/constants/textstyle_constants.dart';
+import 'package:trippify/utils/app_router.dart';
 import 'package:trippify/widgets/home_search_bar.dart';
 import 'package:trippify/widgets/popular_places_gridview.dart';
 import 'package:trippify/widgets/recommended_trip_list_view.dart';
@@ -19,6 +21,15 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: ColorsConstants.blueColor,
+        onPressed: () => Navigator.push(context, AppRouter.createTripPage()),
+        child: Icon(
+          Symbols.robot_2_rounded,
+          color: Colors.white,
+          size: 30,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

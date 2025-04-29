@@ -32,6 +32,16 @@ class TextstyleConstants {
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
+  static TextStyle subTitleTextStyle = GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
+  static TextStyle titleTextStyle2 = GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
 
   static TextStyle smallTextStyle1 = GoogleFonts.inter(
     fontSize: 12,
