@@ -10,7 +10,7 @@ class SnackBarUtils {
     final snackBar = SnackBar(
       content: Text(
         message,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black),
       ),
       backgroundColor: backgroundColor,
       duration: duration,

@@ -25,6 +25,7 @@ class IndexScreen extends StatelessWidget {
 
   Widget _bottomNavigationBar() {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       currentIndex: navigationShell.currentIndex,
       onTap: _onTap,
       backgroundColor: ColorsConstants.blueColor,
@@ -36,6 +37,13 @@ class IndexScreen extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Icon(
             Symbols.home_rounded,
+            size: 30,
+          ),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Symbols.add_rounded,
             size: 30,
           ),
           label: '',

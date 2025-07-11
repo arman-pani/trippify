@@ -61,4 +61,35 @@ class UserModel {
 
   factory UserModel.fromJson(String source) =>
       UserModel.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'UserModel(id: $id, username: $username, profileImage: $profileImage, bio: $bio, age: $age, travellerType: $travellerType, gender: $gender, prefferedPlaces: $prefferedPlaces, prefferedActivities: $prefferedActivities, creationDateTime: $creationDateTime)';
+  }
+
+  UserModel copyWith({
+    String? id,
+    String? username,
+    String? profileImage,
+    String? bio,
+    AgeRange? age,
+    TravellerType? travellerType,
+    Gender? gender,
+    List<String>? prefferedPlaces,
+    List<String>? prefferedActivities,
+    DateTime? creationDateTime,
+  }) {
+    return UserModel(
+      id: id ?? this.id,
+      username: username ?? this.username,
+      profileImage: profileImage ?? this.profileImage,
+      bio: bio ?? this.bio,
+      age: age ?? this.age,
+      travellerType: travellerType ?? this.travellerType,
+      gender: gender ?? this.gender,
+      prefferedPlaces: prefferedPlaces ?? this.prefferedPlaces,
+      prefferedActivities: prefferedActivities ?? this.prefferedActivities,
+      creationDateTime: creationDateTime ?? this.creationDateTime,
+    );
+  }
 }
